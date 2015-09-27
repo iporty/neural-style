@@ -62,7 +62,7 @@ local function main(params)
   end
   
   local content_image = image.load(params.content_image, 3)
-  content_image = image.scale(content_image, params.image_size, 'bilinear')
+  content_image = image.scale(content_image, params.image_size, 'bicubic')
   local content_image_caffe = preprocess(content_image):float()
   
   local style_size = math.ceil(params.style_scale * params.image_size)
